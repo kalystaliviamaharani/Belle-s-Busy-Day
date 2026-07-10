@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("I'm so lucky to have them as my friends.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+        
+         if (progress == 2) {
+            $(".dialogue-text").html("Even when they're bad at lying,");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Or when they go out of their way just to make me smile,");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+         if (progress == 4) {
+            $(".dialogue-text").html("I'm really lucky, aren't I?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 5) {
+            window.location.href = "the_end.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_surprise.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                In the end, they've all gathered here for me...
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

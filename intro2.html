@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("I haven’t heard from him since last weekend... And he wouldn’t answer my texts.");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("But he promised me he was going to let me borrow his skateboard today!");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("I also made him the pancakes he wanted...");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("Sigh...");
+            $(".portrait").attr('src', '../images/belle_emote_sad.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("Now I need to figure out where he's at...");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("I was supposed to go skateboarding, and I wanted to go with Bea to see a movie in the afternoon...");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 7) {
+            window.location.href = "intro3.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/belle_room.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_surprise.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                I tried to call him...
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

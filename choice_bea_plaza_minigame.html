@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day - Bea Minigame</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let cards = [
+        "croissant",
+        "croissant",
+
+        "vanillacake",
+        "vanillacake",
+
+        "chocolatecake",
+        "chocolatecake",
+
+        "cinnamonroll",
+        "cinnamonroll",
+
+        "eggtart",
+        "eggtart",
+
+        "macaron",
+        "macaron"
+    ];
+
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+    let matches = 0;
+
+    let timer = 45;
+    let gameStarted = false;
+    let countdown;
+
+    cards.sort(() => Math.random() - 0.5);
+
+    for(let i = 0; i < cards.length; i++){
+
+        $("#gameBoard").append(`
+
+            <div class="card" data-card="${cards[i]}">
+
+                <div class="card-front"></div>
+
+                <div class="card-back">
+                    <img src="../images/${cards[i]}.png">
+                </div>
+
+            </div>
+
+        `);
+    }
+
+    $("#playBtn").click(function(){
+        $("#instructionPopup").fadeOut(500);
+        startTimer();
+        gameStarted = true;
+    });
+
+    function startTimer(){
+        countdown = setInterval(function(){
+            timer--;
+            $("#timer").html("0:" + timer);
+            if(timer <= 0){
+                clearInterval(countdown);
+                $("#losePopup")
+                .css("display", "flex")
+                .hide()
+                .fadeIn(500);
+            }
+        }, 1000);
+    }
+
+    $(document).on("click", ".card", function(){
+        if(!gameStarted) return;
+        if(lockBoard) return;
+        if($(this).hasClass("flipped")) return;
+        $(this).addClass("flipped");
+
+        if(firstCard == null){
+            firstCard = $(this);
+
+        }
+
+        else{
+            secondCard = $(this);
+            lockBoard = true;
+
+            let firstValue = firstCard.attr("data-card");
+            let secondValue = secondCard.attr("data-card");
+
+            if(firstValue == secondValue){
+
+                setTimeout(function(){
+
+                    firstCard.fadeOut(500);
+                    secondCard.fadeOut(500);
+
+                    matches++;
+
+                    resetCards();
+
+                    if(matches == 6){
+                        clearInterval(countdown);
+                        $("#winPopup")
+                        .css("display", "flex")
+                        .hide()
+                        .fadeIn(500);
+                    }
+                }, 500);
+            }
+
+            else{
+                setTimeout(function(){
+                    firstCard.removeClass("flipped");
+                    secondCard.removeClass("flipped");
+                    resetCards();
+                }, 1000);
+            }
+        }
+
+    });
+
+    function resetCards(){
+        firstCard = null;
+        secondCard = null;
+        lockBoard = false;
+    }
+
+    $("#continueBtn").click(function(){
+        localStorage.setItem("beaDone", "true");
+        window.location.href = "choice_bea_plaza_3.html";
+    });
+
+    $("#retryBtn").click(function(){
+        location.reload();
+    });
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/bea_minigame_bg.png" id="minigameBG">
+
+    <div id="timer">0:45</div>
+
+    <div id="gameBoard"></div>
+
+    <div class="popup" id="instructionPopup" style="display:flex;">
+
+        <div class="popup-content">
+            <h2>How to play:</h2>
+            <p>
+                Make a pair of matching pastries.<br><br>
+
+                Tap a pair of tiles at a time to reveal if they are a match.<br><br>
+
+                You have 45 seconds.<br>
+
+                Good luck!
+            </p>
+            <button id="playBtn">PLAY</button>
+        </div>
+
+    </div>
+
+    <div class="popup" id="winPopup">
+        <div class="popup-content">
+            <h2>Congrats!</h2>
+            <p>
+                You’ve found all the pairs for the pastries!
+            </p>
+            <button id="continueBtn">CONTINUE</button>
+        </div>
+    </div>
+
+    <div class="popup" id="losePopup">
+        <div class="popup-content">
+            <h2>Time has run out!</h2>
+            <p>Try again!</p>
+            <button id="retryBtn">TRY AGAIN</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

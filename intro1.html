@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("Oh! I need to call Alfie.");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 2) {
+            window.location.href = "intro2.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+
+    <img
+        class="portrait"
+        src="../images/belle_emote_happy.png"
+        alt="Belle portrait"
+    >
+
+    <div class="dialogue-content">
+        <p class="character-name">Belle</p>
+
+        <p class="dialogue-text">
+            The sun is shining brightly today.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

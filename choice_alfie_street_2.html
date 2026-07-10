@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("Yeah, it’s me?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("Don’t stand behind people like that! You scared me...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_cry.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("My bigger question is, what were YOU doing?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("I texted you last week and I haven’t heard from you at all!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("I was busy!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 7) {
+            $(".dialogue-text").html("You said I could borrow your skateboard today, and you were going to teach me how to skate...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 8) {
+            $(".dialogue-text").html("I was busy because I lost my frisbee...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 9) {
+            $(".dialogue-text").html("*chorts* ...your frisbee?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 10) {
+            $(".dialogue-text").html("You mean the old frisbee you used to play when you were three?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 11) {
+            $(".dialogue-text").html("I-it means a lot to me, okay?!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_cry.png');
+        }
+
+        if (progress == 12) {
+            $(".dialogue-text").html("My friend was wondering if I could lend him my frisbee for a project.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 13) {
+            $(".dialogue-text").html("But... I somehow lost it...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 14) {
+            $(".dialogue-text").html("I was walking, but I guess it slipped out of my hands at some point.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 15) {
+            $(".dialogue-text").html("I thought it couldn’t have gone too far, it must have been hiding behind the bushes... probably.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 16) {
+            $(".dialogue-text").html("It's right there.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 17) {
+            $(".dialogue-text").html("Huh?");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 18) {
+            $(".dialogue-text").html("It's right next to that tree, behind the bushes.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 19) {
+            $(".dialogue-text").html("...wait, really? Oh...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 20) {
+            $(".dialogue-text").html("Honestly, Alfie... how could a bright red frisbee be hard to find behind some bushes?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 21) {
+            $(".dialogue-text").html("I'm colourblind.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 22) {
+            $(".dialogue-text").html("...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 23) {
+            $(".dialogue-text").html("Oh right.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 24) {
+            $(".dialogue-text").html("Well, since you found your frisbee...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 25) {
+            $(".dialogue-text").html("You PROMISED me to teach me how to skate!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 26) {
+            $(".dialogue-text").html("*laughs* Me? Teaching you? You’re going to fall your head flat in seconds!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 27) {
+            $(".dialogue-text").html("What? I helped you find your frisbee!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 28) {
+            $(".dialogue-text").html("And I promised my friend I was going to help him with a project today...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 29) {
+            $(".dialogue-text").html("Oh, I get it...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 30) {
+            $(".dialogue-text").html("You’re scared I’m going to end up doing better than you right?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 31) {
+            $(".dialogue-text").html("Well there’s definitely no denying it.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 32) {
+            $(".dialogue-text").html("A bright coloured frisbee should’ve been easy to spot... heheh.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 33) {
+            $(".dialogue-text").html("Tch...!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_glance.png');
+        }
+
+        if (progress == 34) {
+            $(".dialogue-text").html("I’d like to see you try...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 35) {
+            $(".dialogue-text").html("...considering you lost your phone while talking on it.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 36) {
+            $(".dialogue-text").html("Teach me! Unless you’re scared!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 37) {
+            $(".dialogue-text").html("Heh, try and keep up.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+        
+         if (progress == 38) {
+            window.location.href = "choice_alfie_street_minigame.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/alfie_street_2.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/alfie_emote_glance.png"
+        alt="Alfie portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Alfie</p>
+            <p class="dialogue-text">
+                Oh... it's you.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

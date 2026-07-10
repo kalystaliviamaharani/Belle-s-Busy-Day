@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("I’ll be bringing these home to study their growth patterns.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("Livius flower?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Yes, when they are pollinated, they transform into sweet crystal-like fruits.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("Oooo...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("Thank you for your help, Belle.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_cheerful.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("Haha, it’s no problem!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 7) {
+            $(".dialogue-text").html("Oh, I was wondering...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 8) {
+            $(".dialogue-text").html("Might you have free time to hang out today?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 9) {
+            $(".dialogue-text").html("I'm really sorry Belle...");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sad.png');
+        }
+
+        if (progress == 10) {
+            $(".dialogue-text").html("I’ve got an assignment due in a few days, and I will need to finish documenting my samples.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sad.png');
+        }
+
+        if (progress == 11) {
+            $(".dialogue-text").html("Oh, I see...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 12) {
+            $(".dialogue-text").html("I’ll let you know as soon as I can when I’m available.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 13) {
+            $(".dialogue-text").html("But sadly, just not today... sorry.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sad.png');
+        }
+
+        if (progress == 14) {
+            $(".dialogue-text").html("No, it's okay!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 15) {
+            $(".dialogue-text").html("Don’t worry about it, you should focus on your studies.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 16) {
+            $(".dialogue-text").html("*Yuki needs to study, maybe someone else is free today.*");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 17) {
+            window.location.href = "choices.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/yuki_garden_2.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/yuki_emote_happy.png"
+        alt="Yuki portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Yuki</p>
+            <p class="dialogue-text">
+                These Livius flowers are quite delicate.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

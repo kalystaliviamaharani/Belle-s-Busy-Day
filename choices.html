@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    $("#fadeScreen").addClass("fade-in");    
+
+    let beaDone = localStorage.getItem("beaDone");
+    let alfieDone = localStorage.getItem("alfieDone");
+    let yukiDone = localStorage.getItem("yukiDone");    
+
+    if(beaDone == "true"){
+        $("#option1").hide();
+    }
+
+    if(alfieDone == "true"){
+        $("#option2").hide();
+    }
+
+    if(yukiDone == "true"){
+        $("#option3").hide();
+    }    
+
+    let completedCount = 0;
+
+    if(beaDone == "true"){
+        completedCount++;
+    }
+
+    if(alfieDone == "true"){
+        completedCount++;
+    }
+
+    if(yukiDone == "true"){
+        completedCount++;
+    }
+
+    if(completedCount >= 1){
+
+        $("#choiceQuestion").html(
+            "Where should Belle visit next?"
+        );
+    }
+
+    if(completedCount == 3){
+
+        window.location.href = "return_home_1.html";
+    }    
+
+    $("#option1").click(function(){
+
+        $("#fadeScreen")
+        .removeClass("fade-in")
+        .addClass("fade-out");
+
+        setTimeout(function(){
+
+            window.location.href =
+            "choice_bea_plaza_1.html";
+
+        }, 1000);
+
+    });
+
+    $("#option2").click(function(){
+
+        $("#fadeScreen")
+        .removeClass("fade-in")
+        .addClass("fade-out");
+
+        setTimeout(function(){
+
+            window.location.href =
+            "choice_alfie_street_1.html";
+
+        }, 1000);
+
+    });   
+
+    $("#option3").click(function(){
+
+        $("#fadeScreen")
+        .removeClass("fade-in")
+        .addClass("fade-out");
+
+        setTimeout(function(){
+
+            window.location.href =
+            "choice_yuki_garden_1.html";
+
+        }, 1000);
+
+    });
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/choices_bg.png" id="choiceBG">
+    
+    <div id="fadeScreen"></div>
+    
+    <div id="choiceBox">
+
+        <h1 id="choiceQuestion">
+            Where should Belle visit first?
+        </h1>
+        
+        <div class="choiceOption" id="option1">
+            Visit the Plaza
+        </div>
+        
+        <div class="choiceOption" id="option2">
+            Walk down the street
+        </div>
+        
+        <div class="choiceOption" id="option3">
+            Visit the garden
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html> 

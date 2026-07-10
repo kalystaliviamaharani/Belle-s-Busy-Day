@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;   
+        if (progress == 1) {
+            $(".dialogue-text").html("She’s so hard-working! I’m so excited for when she’ll finally be able to open her own store. It’s her life-long dream...");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("Whenever I walk pass the bakery, I can smell the strong aroma of freshly baked bread!");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Lately she’s been busier than usual. Her boss has been giving her a lot of shifts. She gets home pretty late.");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 4) {
+            window.location.href = "intro4.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/bea_intro.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_surprise.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                I think she’s working at the bakery store across the street today...
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

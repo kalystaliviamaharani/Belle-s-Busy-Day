@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day - Alfie Minigame</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let colours = ["red", "blue", "green", "yellow"];
+
+    let sequence = [];
+    let playerSequence = [];
+
+    let round = 1;
+    let playerTurn = false;
+
+    $("#playBtn").click(function(){
+
+        $("#instructionPopup").fadeOut(500);
+
+        startGame();
+
+    });
+
+    function startGame(){
+
+        sequence = [];
+        round = 1;
+
+        addNewColour();
+
+    }
+ 
+    function addNewColour(){
+
+        let randomColour = colours[Math.floor(Math.random() * colours.length)];
+
+        sequence.push(randomColour);
+
+        $("#roundText").html("ROUND " + round);
+
+        playSequence();
+
+    }   
+
+    function playSequence(){
+
+        playerTurn = false;
+
+        playerSequence = [];
+
+        let i = 0;
+
+        let interval = setInterval(function(){
+
+            flashButton(sequence[i]);
+
+            i++;
+
+            if(i >= sequence.length){
+
+                clearInterval(interval);
+
+                setTimeout(function(){
+
+                    playerTurn = true;
+
+                }, 1000);
+            }
+
+        }, 1000);
+
+    }
+   
+    function flashButton(colour){
+
+        let button = $("#" + colour);
+
+        button.addClass("flash");
+
+        setTimeout(function(){
+
+            button.removeClass("flash");
+
+        }, 400);
+
+    }  
+
+    $(".colourBtn").click(function(){
+
+        if(playerTurn == false){
+            return;
+        }
+
+        let clickedColour = $(this).attr("data-colour");
+
+        flashButton(clickedColour);
+
+        playerSequence.push(clickedColour);
+
+        let currentIndex = playerSequence.length - 1;
+       
+        if(playerSequence[currentIndex] != sequence[currentIndex]){
+
+            $("#losePopup")
+            .css("display", "flex")
+            .hide()
+            .fadeIn(500);
+
+            playerTurn = false;
+
+            return;
+        }        
+
+        if(playerSequence.length == sequence.length){
+
+            playerTurn = false;            
+
+            if(round == 6){
+
+                $("#winPopup")
+                .css("display", "flex")
+                .hide()
+                .fadeIn(500);
+
+                return;
+            }            
+
+            $("#greatJobText").fadeIn(300);
+
+            setTimeout(function(){
+
+                $("#greatJobText").fadeOut(300);
+
+                round++;
+
+                addNewColour();
+
+            }, 1000);
+
+        }
+
+    });    
+
+    $("#continueBtn").click(function(){
+    	localStorage.setItem("alfieDone", "true");
+        window.location.href = "choice_alfie_street_3.html";
+
+    });
+
+    $("#retryBtn").click(function(){
+
+        location.reload();
+
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/alfie_minigame_bg.png" id="minigameBG">
+    
+    <div id="roundText">
+        ROUND 1
+    </div>
+    
+    <div id="greatJobText">
+        Great job!
+    </div>
+
+    <div id="simonContainer">
+        
+        <img
+            src="../images/button_blue.png"
+            class="colourBtn"
+            id="blue"
+            data-colour="blue"
+        >
+       
+        <img
+            src="../images/button_green.png"
+            class="colourBtn"
+            id="green"
+            data-colour="green"
+        >
+        
+        <img
+            src="../images/button_yellow.png"
+            class="colourBtn"
+            id="yellow"
+            data-colour="yellow"
+        >
+       
+        <img
+            src="../images/button_red.png"
+            class="colourBtn"
+            id="red"
+            data-colour="red"
+        >
+
+    </div>
+  
+    <div class="popup" id="instructionPopup" style="display:flex;">
+
+        <div class="popup-content">
+
+            <h2>How to play:</h2>
+
+            <p>
+                Alfie needs to teach Belle to memorise
+                a skateboard trick combo!<br><br>
+
+                Click the colour buttons in the same order.<br><br>
+
+                There are 6 rounds to complete.<br><br>
+
+                Good luck!
+            </p>
+
+            <button id="playBtn">PLAY</button>
+
+        </div>
+
+    </div>
+   
+    <div class="popup" id="winPopup">
+
+        <div class="popup-content">
+
+            <h2>Congrats!</h2>
+
+            <p>
+                You’ve memorised the trick combo!
+            </p>
+
+            <button id="continueBtn">
+                CONTINUE
+            </button>
+
+        </div>
+
+    </div>
+  
+    <div class="popup" id="losePopup">
+
+        <div class="popup-content">
+
+            <h2>
+                Oops, that’s not the right colour.
+            </h2>
+
+            <p>
+                Try again!
+            </p>
+
+            <button id="retryBtn">
+                TRY AGAIN
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

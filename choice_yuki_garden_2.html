@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("Mhm, it seems that this month is the perfect time for them to bloom.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("I’m trying to look for a special type of flower...");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sideglance.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("But they’re all have probably already turned into fruits...");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_glance.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("Woah, look at those red and purple ones!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("Oh, and those yellow ones too...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("Looks like they’re ready to be picked.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sideglance.png');
+        }
+
+        if (progress == 7) {
+            $(".dialogue-text").html("Oh, is this for your class assignment?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 8) {
+            $(".dialogue-text").html("Yes, we’re learning about the Livius flower.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 9) {
+            $(".dialogue-text").html("They only bloom for a short period during early spring.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_cheerful.png');
+        }
+
+        if (progress == 10) {
+            $(".dialogue-text").html("Once pollinated, their petal slowly hardens and ripen into fruit.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 11) {
+            $(".dialogue-text").html("Do you need help picking them?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 12) {
+            $(".dialogue-text").html("Hmm... I may need a helping hand with collecting these...");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_sideglance.png');
+        }
+
+        if (progress == 13) {
+            $(".dialogue-text").html("If you’d like to help, I’d really appreciate it!");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 14) {
+            $(".dialogue-text").html("Sure!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 15) {
+            window.location.href = "choice_yuki_garden_minigame.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/yuki_garden_2.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_happy.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                All the flowers in here are so pretty...
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

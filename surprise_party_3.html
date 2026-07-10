@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("Mhm.");
+            $(".character-name").html("Yuki");
+            $(".portrait").attr('src', '../images/yuki_emote_happy.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("...Even if Bea kept yelling at me for eating the icing.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_happy.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Because you kept eating the icing.");
+            $(".character-name").html("Bea");
+            $(".portrait").attr('src', '../images/bea_emote_glance.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("I thought everyone was too busy to spend time with me today...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("We WERE busy.");
+            $(".character-name").html("Bea");
+            $(".portrait").attr('src', '../images/bea_emote_happy.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("Busy planning this!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 7) {
+            $(".dialogue-text").html("...Thank you.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 8) {
+            $(".dialogue-text").html("Really.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 9) {
+            $(".dialogue-text").html("You're welcome, Belle.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 10) {
+            $(".dialogue-text").html("Now hurry up and sit down before Bea makes ME carry the cake again.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_happy.png');
+        }
+
+        if (progress == 11) {
+            $(".dialogue-text").html("Because you nearly dropped it!");
+            $(".character-name").html("Bea");
+            $(".portrait").attr('src', '../images/bea_emote_happy.png');
+        }
+
+        if (progress == 12) {
+            $(".dialogue-text").html("I slipped!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_cry.png');
+        }
+
+        if (progress == 13) {
+            $(".dialogue-text").html("Hahaha!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_cheerful.png');
+        }
+
+        if (progress == 14) {
+            window.location.href = "surprise_party_4.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/surprise_party_2.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_happy.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                You all made this together?
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("That was pure luck!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_cry.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("...but it was pretty fun.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_smirk.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Oh also, I’ve got the leftover pancakes at home, want some?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_happy.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("Ah... I have a lot of chores to do at home...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("I forgot to tell you... erm, sorry...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 6) {
+            $(".dialogue-text").html("Oh...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 7) {
+            $(".dialogue-text").html("I thought you needed to help your friend film something?");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_surprise.png');
+        }
+
+        if (progress == 8) {
+            $(".dialogue-text").html("O-oh, right! That too.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 9) {
+            $(".dialogue-text").html("*I can’t help but feel like Alfie is... hiding something?*");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 10) {
+            $(".dialogue-text").html("*Why is he fidgeting?*");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 11) {
+            $(".dialogue-text").html("*He’s also not a very good liar...*");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 12) {
+            $(".dialogue-text").html("...I’ll try the pancakes next time!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 13) {
+            $(".dialogue-text").html("NO, pinky promise!");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_annoyed.png');
+        }
+
+        if (progress == 14) {
+            $(".dialogue-text").html("Okay, okay...");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_happy.png');
+        }
+
+        if (progress == 15) {
+            $(".dialogue-text").html("...I pinky promise.");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_happy.png');
+        }
+
+        if (progress == 16) {
+            $(".dialogue-text").html("Okay, gotta go!");
+            $(".character-name").html("Alfie");
+            $(".portrait").attr('src', '../images/alfie_emote_guilt.png');
+        }
+
+        if (progress == 17) {
+            $(".dialogue-text").html("*Alfie is busy... Maybe someone else is free today.*");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+         if (progress == 18) {
+            window.location.href = "choices.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/alfie_street_2.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_cheerful.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                Hahah! Look! Looks like I can do tricks after all!
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Belle's Busy Day</title>
+<link href="../css/style.css" rel="stylesheet">
+<script src="../jquery-4.0.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let progress = 0;
+
+    $(".dialogue-box").click(function() {
+
+        console.log(progress)
+        progress++;
+        if (progress == 1) {
+            $(".dialogue-text").html("Alfie's off somewhere...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 2) {
+            $(".dialogue-text").html("and Yuki needs to study...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_glance.png');
+        }
+
+        if (progress == 3) {
+            $(".dialogue-text").html("Maybe I’ve been the one who’s got too much free time.");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_sad.png');
+        }
+
+        if (progress == 4) {
+            $(".dialogue-text").html("I still have leftover pancakes at home...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_sad.png');
+        }
+
+        if (progress == 5) {
+            $(".dialogue-text").html("I think I should just go and eat those...");
+            $(".character-name").html("Belle");
+            $(".portrait").attr('src', '../images/belle_emote_sad.png');
+        }
+
+        if (progress == 6) {
+            window.location.href = "return_home_3.html";
+        }
+    })
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="stage">
+
+    <img src="../images/return_home.png" id="bg1">
+
+    <div id="fadeScreen"></div>
+
+    <div class="dialogue-box">
+        <img
+        class="portrait"
+        src="../images/belle_emote_glance.png"
+        alt="Belle portrait"
+        >
+
+        <div class="dialogue-content">
+            <p class="character-name">Belle</p>
+            <p class="dialogue-text">
+                Bea’s working overtime...
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
